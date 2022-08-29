@@ -1,7 +1,16 @@
-function hasTargetSum(array, target) {
-  // Write your algorithm here
-}
 
+function hasTargetSum(array, target) {
+  const seenNumbers = {};
+
+for (const number of array) {
+  const complement = target - number;
+  // for (let j = i + 1; j < array.lenght; j++) {
+    if ( seenNumbers[complement] ) return true;
+    seenNumbers[number] = true;
+  }
+
+return false;
+}
 /* 
   Write the Big O time complexity of your function here
 */
